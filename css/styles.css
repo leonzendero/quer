@@ -2617,11 +2617,7 @@ content: "\f041";
 /* Blog category page */
 
 .blog-category-page .header {
-  background-color: #202d3b;
-}
-
-.blog-category-page .header h1.logo a img {
-  padding-top: 10px;
+  background-color: #1d4354;
 }
 
 .blog-category {
@@ -4350,7 +4346,7 @@ height:auto;
     position: fixed;
   }
   .header.scrolled {
-    background: #202d3b;
+    background: #1d4354;
     z-index: 1000;
     height: 80px;
     top: 0;
@@ -4928,4 +4924,8 @@ input:checked ~ div {
   .contact-main-form ul {
     margin-top: 40px;
   }
+}
+
+.input-delete-news input {
+  display: none;
 }

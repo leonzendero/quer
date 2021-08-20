@@ -2863,12 +2863,6 @@ height: 10px;
   border-color: #0094c6;
 }
 
-.about-page .header .main-nav .nav .nav-item.nav-item-cta a.btn-cta-secondary:hover{
-  background-color: #fff;
-  font-weight: bold;
-  border: 1px solid #232323;
-}
-
 .about-page .header .main-nav .nav .dropdown-menu{
   background: #fff;
   border: 0.5px solid #ababab;
@@ -3058,11 +3052,6 @@ height:auto;
   .about-page section.team-the-team div.left div.member div.name {
   line-height: 1.2;
   padding-bottom: 0.5em;
-  }
-
-  .about-page .header .main-nav .navbar-collapse{
-    background-color: #fff;
-    border: 1px solid #ababab;
   }
 
 }
@@ -4922,4 +4911,21 @@ input:checked ~ div {
 
 .contact-main-list a:hover {
   color: #757575;
+}
+
+@media only screen and (max-width: 750px) {
+  .contact-main-wrapper-grid {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-main-list, .contact-main-form ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-main-form ul {
+    margin-top: 40px;
+  }
 }

@@ -576,7 +576,7 @@ margin-bottom: 20px;
   background-image: url('../images/qureteam.jpg');
 }
 .headline-bg.qxr-headline-bg {
-  background-image: url('../images/gaylord_national_harbor.jpg');
+  background-image: url('../images/labrats.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -2743,7 +2743,7 @@ content: "\f041";
 /* ======= About Page ======= */
 
 .about-page .header.navbar-fixed-top{
-  background-color: #fff;
+  background-color: #1d4354!important;
 }
 
 .about-page div.square {
@@ -2832,11 +2832,11 @@ height: 10px;
 
 
 .about-page .header .main-nav .nav .nav-item a{
- color:#232323;
+  color: #fff;
 }
 
 .about-page .header.scrolled .main-nav .nav .nav-item a{
- color:#232323;
+  color: #fff;
 }
 
 .about-page .header .main-nav .nav .nav-item a:hover  {
@@ -2850,16 +2850,17 @@ height: 10px;
 }
 
 .about-page .header .main-nav .nav .nav-item.nav-item-cta a.btn-cta-secondary {
-  color: #232323;
-  border: 1px solid #232323;
-  font-weight: normal;
+  border-color: #fff;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 10px;
 }
 
 .about-page .header.scrolled .main-nav .nav .nav-item.nav-item-cta a.btn-cta-secondary {
-  background-color: #fff;
-  color: #232323;
-  border: 1px solid #232323;
+  color: #fff;
   font-weight: normal;
+  background: #0094c6;
+  border-color: #0094c6;
 }
 
 .about-page .header .main-nav .nav .nav-item.nav-item-cta a.btn-cta-secondary:hover{
@@ -2885,9 +2886,6 @@ height: 10px;
 
 .about-page .header .main-nav .nav .dropdown-menu a:hover{
   background-color:#fff;
-}
-.about-page .navlogo{
-  content:url("../images/qure_logo_grey.png")
 }
 
 .about-page section.team-the-team {
@@ -4566,9 +4564,6 @@ label.show-abstract {
     cursor: pointer;
     /* top: 100%; */
 }
-input {
-    display: none;
-}
 label.show-abstract::before {
     content: "Show Abstract";
     color: #0094c6;
@@ -4813,4 +4808,118 @@ input:checked ~ div {
     grid-template-columns: 1fr;
     grid-gap: 20px;
   }
+}
+@media only screen and (max-width: 750px) {
+  .nav-tabs .nav-item .nav-link {
+    padding: 8px 8px;
+  }
+
+  .use-cases {
+    padding: 0 20px;
+  }
+}
+
+.contact-main {
+  padding-top: 120px;
+}
+
+.contact-main-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 900;
+  margin-top: 0;
+  color: #202d3b;
+}
+
+.contact-main-list i {
+  margin-right: 8px;
+}
+
+.contact-main-list a {
+  text-decoration: none;
+  color: #0A131E;
+}
+
+.contact-main-list li {
+  color: #0A131E;
+}
+
+.contact-main-wrapper-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.contact-main-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.contact-main-wrapper-grid {
+  margin-top: 80px;
+  margin-bottom: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-main-list-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.form-group-contact {
+  display: flex;
+}
+
+.contact-main-form {
+  max-width: 500px;
+  width: 100%;
+}
+
+.contact-main-form ul {
+  list-style: none;
+}
+
+.contact-main-form ul li input, .contact-main-form ul li textarea {
+  width: 100%;
+  border: 2px solid #0c5460;
+  padding: 10px 20px;
+  color: #0A131E;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.contact-main-form ul li button {
+  width: 200px;
+  padding: 10px 20px;
+  background: #0c5460;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid #0c5460;
+  outline: none;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+
+.contact-main-form ul li button:hover {
+  background: white;
+  color: #0c5460;
+}
+
+.contact-main-list li {
+  margin-bottom: 20px;
+}
+
+.contact-main-list a {
+  transition: 0.5s ease-in-out;
+}
+
+.contact-main-list a:hover {
+  color: #757575;
 }

@@ -4805,9 +4805,6 @@ input:checked ~ div {
   }
 }
 
-.contact-main {
-  padding-top: 120px;
-}
 
 .contact-main-title {
   text-align: center;
@@ -4834,6 +4831,7 @@ input:checked ~ div {
   text-align: center;
   font-size: 40px;
   font-weight: 600;
+  margin-bottom: 30px;
 }
 
 .contact-main-list {
@@ -4929,4 +4927,15 @@ input:checked ~ div {
 
 .input-delete-news input {
   display: none;
+}
+
+.team-img {
+  margin: 40px 0;
+}
+
+.team-img img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 450px;
 }

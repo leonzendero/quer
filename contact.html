@@ -79,6 +79,7 @@
 </head>
 
 <body class="qxr-page">
+
 <div class="wrapper">
     <header id="header" class="header navbar-fixed-top">
         <div class="container">
@@ -140,10 +141,16 @@
         </div><!--//container-->
     </div>
 
+    <div class="team-img">
+        <div class="container">
+            <h3 class="contact-main-wrapper-title">Contact Us</h3>
+            <img src="./images/team-main.jpg" alt="">
+        </div>
+    </div>
+
     <section class="contact-main">
         <div class="container">
             <div class="contact-main-wrapper">
-                <h3 class="contact-main-wrapper-title">Contact Us</h3>
                 <div class="contact-main-wrapper-grid">
                     <ul class="contact-main-list">
                         <li class="contact-main-list-title">
@@ -163,19 +170,19 @@
                     <form class="contact-main-form" method="post">
                         <ul>
                             <li>
-                                <input type="text" id="name" name="user_name" placeholder="Full your name">
+                                <input type="text" id="name" name="name" placeholder="Full your name" required>
                             </li>
                             <li>
-                                <input type="email" id="mail" name="user_mail" placeholder="E-mail">
+                                <input type="email" id="mail" name="email" placeholder="E-mail" required>
                             </li>
                             <li>
-                                <input type="tel" id="tel" name="user_message" placeholder="Phone">
+                                <input type="tel" id="tel" name="phone" placeholder="Phone">
                             </li>
                             <li>
-                                <input type="text" id="sub" name="user_message" placeholder="Subject">
+                                <input type="text" id="sub" name="subject" placeholder="Subject" required>
                             </li>
                             <li>
-                                <textarea id="msg" name="user_message" placeholder="Message"></textarea>
+                                <textarea id="msg" name="message" placeholder="Message"></textarea>
                             </li>
                             <li>
                                 <button type="submit" class="contact-main-form-btn">send message</button>

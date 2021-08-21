@@ -576,11 +576,12 @@ margin-bottom: 20px;
   background-image: url('../images/qureteam.jpg');
 }
 .headline-bg.qxr-headline-bg {
-  background-image: url('../images/labrats.jpg');
+  background-image: url('../images/hospital.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
+
 .headline-bg.tb-headline-bg {
   background-image: url('../images/TB_van3.jpg');
 }

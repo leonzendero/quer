@@ -1,189 +1,245 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>DiagnostiX.ai | Artificial Intelligence for Radiology</title>
+<?php
 
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title -->
-
-    <meta name="twitter:title" content="DiagnostiX.ai | A.I. Powered X-Ray Analysis">
-    <meta name="og:title" content="DiagnostiX.ai | A.I. Powered X-Ray Analysis">
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // 1. Form collection
+    $fields = ['user_name', 'user_mail', 'user_phone', 'user_subject', 'user_message'];
 
 
-    <!-- Description -->
+    $data = [];
 
-    <meta name="description"
-          content="DiagnostiX.ai develops deep learning algorithms that interpret radiology images. Our mission is to make healthcare accessible and affordable using the power of deep learning.">
-    <meta name="twitter:description"
-          content="DiagnostiX.ai develops deep learning algorithms that interpret radiology images. Our mission is to make healthcare accessible and affordable using the power of deep learning.">
-    <meta property="og:description"
-          content="DiagnostiX.ai develops deep learning algorithms that interpret radiology images. Our mission is to make healthcare accessible and affordable using the power of deep learning.">
+    foreach ($fields as $field) {
+        if ($_POST[$field]) {
+            $data[$field] = $_POST[$field];
+        }
+    }
 
+    // 2. Form validation
 
-    <!-- Image -->
+    // Need to do validation here
 
-    <meta property="og:image" content="images/DiagnostiX_ai_AI_for_radiology.png">
-    <meta name="twitter:image" content="http://DiagnostiX.ai/assets/images/DiagnostiX_ai_AI_for_radiology.png">
+    // 3. Email sending
+    $to = 'info@diagnostix.ai';
+    $subject = 'Заявка с сайта';
+    $message = sprintf(
+        'Full name: %s<br>E-mail: %s<br>Phone: %s<br>Subject: %s<br>Message: %s',
+                    $data['user_name'],
+                    $data['user_mail'],
+                    $data['user_phone'],
+                    $data['user_subject'],
+                    $data['user_message']
+                    );
 
+                    $mailSent = mail($to, $subject, $message);
 
-    <meta name="twitter:site" content="@DiagnostiX_ai">
-    <meta name="twitter:card" content="summary">
-    <meta name="og:url" content="/">
-    <meta name="keywords"
-          content="deep learning, radiology, healthcare, patient, innovation, research, artificial intelligence, AI for Radiology, CT scan AI, X-ray, Artificial Intelligence, A.I. Powered X-Ray Analysis">
-
-
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href="css/css.css" rel="stylesheet" type="text/css">
-    <link href="css/css_1.css" rel="stylesheet" type="text/css">
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/flexslider.css">
-    <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="css/styles.css">
-    <link id="theme-style" rel="stylesheet" href="css/oldwebsite.css">
-    <!-- jquery -->
-    <script src="js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" type="text/css" href="css/cookieconsent.min.css">
-    <script src="js/cookieconsent.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="css/cookieconsent.min.css">
-    <script src="js/cookieconsent.min.js"></script>
-    <!-- Google adsense  -->
-    <script data-ad-client="ca-pub-1877538024709309" async src="js/adsbygoogle.js"></script>
-    <script>
-        window.addEventListener("load", function () {
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                        "background": "#001242"
-                    },
-                    "button": {
-                        "background": "#0094c6"
+                    if ($mailSent) {
+                    $statusMessage = 'Message sent';
+                    } else {
+                    $statusMessage = 'Something went wrong. Please, try again';
                     }
-                },
-                "content": {
-                    "href": "/privacy-policy.html"
-                }
-            })
-        });
-    </script>
+                    }
 
-</head>
+                    ?>
 
-<body class="qxr-page">
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <title>DiagnostiX.ai | Artificial Intelligence for Radiology</title>
 
-<div class="wrapper">
-    <header id="header" class="header navbar-fixed-top">
-        <div class="container">
+                        <!-- Meta -->
+                        <meta charset="utf-8">
+                        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <!-- Logo -->
-            <h1 class="logo">
-                <a href="/"><img src="images/header_logo_03.png" alt="logo" class="logo navlogo">
-                </a>
-            </h1>
-            <!--//logo-->
+                        <!-- Title -->
 
-            <!-- Nav Bar -->
-            <nav class="main-nav navbar navbar-right navbar-inverse navbar-expand-md" role="navigation">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
-                        aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class=" active  nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class=" nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false" href="#">Products</a>
-                            <!--                            <div class="dropdown-menu dropdown-menu-right">-->
-                            <!--                                <h6 class="dropdown-header">In the Clinic</h6>-->
-                            <!--                                <a class="dropdown-item" href="/qxr.html">Chest X-rays</a>-->
-                            <!--                                <a class="dropdown-item" href="/headct.html">Head CT Scans</a>-->
-                            <!--                                <a class="dropdown-item" href="/poqus.html">POqUS</a>-->
-                            <!--                                <a class="dropdown-item" href="/qct-lung.html">CHEST CT SCANS</a>-->
-                            <!--                                <h2 class="dropdown-header ">In the Community </h2>-->
-                            <!--                                <a class="dropdown-item" href="/publichealth.html">Public health solutions</a>-->
-                            <!--                                <a class="dropdown-item" href="/qxr-tuberculosis.html">Tuberculosis </a>-->
-                            <!--                                <a class="dropdown-item" href="/covid.html">COVID-19 </a>-->
-                            <!--                            </div>-->
-                        </li>
-                        <!--//dropdown-->
-                        <li class=" nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
-                        <li class=" nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false" href="#">News</a>
-                            <!--                            <div class="dropdown-menu dropdown-menu-right">-->
-                            <!--                                <a class="dropdown-item" href="/news.html">Highlights</a>-->
-                            <!--                                <a class="dropdown-item" href="/press_coverage.html">Press coverage</a>-->
-                            <!--                            </div>-->
-                        </li>
-                        <li class="nav-item"><a class="nav-link" target="_blank" href="#">Blog</a>
-                        </li>
-                        <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" target="_blank"
-                                                                  href="#">Try Now<sup>* </sup></a></li>
-                    </ul><!--//nav-->
-                </div><!--//navabr-collapse-->
-            </nav><!--//main-nav-->
-        </div><!--//container-->
-    </header><!--//header-->
+                        <meta name="twitter:title" content="DiagnostiX.ai | A.I. Powered X-Ray Analysis">
+                        <meta name="og:title" content="DiagnostiX.ai | A.I. Powered X-Ray Analysis">
 
-    <div class="headline-bg qxr-headline-bg">
-        <div class="container col-md-6 headertext">
-            <h2 class="title">Contact Us</h2>
-        </div><!--//container-->
-    </div>
 
-    <div class="team-img">
-        <div class="container">
-            <h3 class="contact-main-wrapper-title">Contact Us</h3>
-            <img src="./images/team-main.jpg" alt="">
-        </div>
-    </div>
+                        <!-- Description -->
 
-    <section class="contact-main">
-        <div class="container">
-            <div class="contact-main-wrapper">
-                <div class="contact-main-wrapper-grid">
-                    <ul class="contact-main-list">
-                        <li class="contact-main-list-title">
-                            Feel free to contact us at any time
-                        </li>
-                        <li class="list-inline-item"><i class="fa fa-map-marker"></i>Gustav Mahlerplein
-                            2,
-                            Amsterdam, Netherlands
-                        </li>
-                        <li class="list-inline-item"><a href="tel:+31207997300"><i class="fa fa-phone"
-                                                                                   aria-hidden="true"></i>+31
-                            20 799 7300</a></li>
-                        <li class="list-inline-item"><a href="mailto:support@diagnostix.ai"><i
-                                class="fa fa-envelope-o"></i>
-                            support@diagnostix.ai</a></li>
-                    </ul>
-                    <form class="contact-main-form" method="post">
+                        <meta name="description"
+                              content="DiagnostiX.ai develops deep learning algorithms that interpret radiology images. Our mission is to make healthcare accessible and affordable using the power of deep learning.">
+                        <meta name="twitter:description"
+                              content="DiagnostiX.ai develops deep learning algorithms that interpret radiology images. Our mission is to make healthcare accessible and affordable using the power of deep learning.">
+                        <meta property="og:description"
+                              content="DiagnostiX.ai develops deep learning algorithms that interpret radiology images. Our mission is to make healthcare accessible and affordable using the power of deep learning.">
+
+
+                        <!-- Image -->
+
+                        <meta property="og:image" content="images/DiagnostiX_ai_AI_for_radiology.png">
+                        <meta name="twitter:image" content="http://DiagnostiX.ai/assets/images/DiagnostiX_ai_AI_for_radiology.png">
+
+
+                        <meta name="twitter:site" content="@DiagnostiX_ai">
+                        <meta name="twitter:card" content="summary">
+                        <meta name="og:url" content="/">
+                        <meta name="keywords"
+                              content="deep learning, radiology, healthcare, patient, innovation, research, artificial intelligence, AI for Radiology, CT scan AI, X-ray, Artificial Intelligence, A.I. Powered X-Ray Analysis">
+
+
+                        <link rel="shortcut icon" href="favicon.ico">
+                        <link href="css/css.css" rel="stylesheet" type="text/css">
+                        <link href="css/css_1.css" rel="stylesheet" type="text/css">
+                        <!-- Global CSS -->
+                        <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+                        <!-- Plugins CSS -->
+                        <link rel="stylesheet" href="css/font-awesome.min.css">
+                        <link rel="stylesheet" href="css/flexslider.css">
+                        <!-- Theme CSS -->
+                        <link id="theme-style" rel="stylesheet" href="css/styles.css">
+                        <link id="theme-style" rel="stylesheet" href="css/oldwebsite.css">
+                        <!-- jquery -->
+                        <script src="js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
+                        <link rel="stylesheet" type="text/css" href="css/cookieconsent.min.css">
+                        <script src="js/cookieconsent.min.js"></script>
+
+                        <link rel="stylesheet" type="text/css" href="css/cookieconsent.min.css">
+                        <script src="js/cookieconsent.min.js"></script>
+                        <!-- Google adsense  -->
+                        <script data-ad-client="ca-pub-1877538024709309" async src="js/adsbygoogle.js"></script>
+                        <script>
+                            window.addEventListener("load", function () {
+                                window.cookieconsent.initialise({
+                                    "palette": {
+                                        "popup": {
+                                            "background": "#001242"
+                                        },
+                                        "button": {
+                                            "background": "#0094c6"
+                                        }
+                                    },
+                                    "content": {
+                                        "href": "/privacy-policy.html"
+                                    }
+                                })
+                            });
+                        </script>
+
+                    </head>
+
+                    <body class="qxr-page">
+
+                    <?php
+
+if (isset($statusMessage)) {
+    var_dump($statusMessage);
+}
+
+?>
+
+
+                    <div class="wrapper">
+                        <header id="header" class="header navbar-fixed-top">
+                            <div class="container">
+
+                                <!-- Logo -->
+                                <h1 class="logo">
+                                    <a href="/"><img src="images/header_logo_03.png" alt="logo" class="logo navlogo">
+                                    </a>
+                                </h1>
+                                <!--//logo-->
+
+                                <!-- Nav Bar -->
+                                <nav class="main-nav navbar navbar-right navbar-inverse navbar-expand-md" role="navigation">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+                                            aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div id="navbar-collapse" class="navbar-collapse collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li class=" active  nav-item"><a class="nav-link" href="/">Home</a></li>
+                                            <li class=" nav-item dropdown">
+                                                <a class="nav-link" data-toggle="dropdown" aria-haspopup="true"
+                                                   aria-expanded="false" href="#">Products</a>
+                                                <!--                            <div class="dropdown-menu dropdown-menu-right">-->
+                                                <!--                                <h6 class="dropdown-header">In the Clinic</h6>-->
+                                                <!--                                <a class="dropdown-item" href="/qxr.html">Chest X-rays</a>-->
+                                                <!--                                <a class="dropdown-item" href="/headct.html">Head CT Scans</a>-->
+                                                <!--                                <a class="dropdown-item" href="/poqus.html">POqUS</a>-->
+                                                <!--                                <a class="dropdown-item" href="/qct-lung.html">CHEST CT SCANS</a>-->
+                                                <!--                                <h2 class="dropdown-header ">In the Community </h2>-->
+                                                <!--                                <a class="dropdown-item" href="/publichealth.html">Public health solutions</a>-->
+                                                <!--                                <a class="dropdown-item" href="/qxr-tuberculosis.html">Tuberculosis </a>-->
+                                                <!--                                <a class="dropdown-item" href="/covid.html">COVID-19 </a>-->
+                                                <!--                            </div>-->
+                                            </li>
+                                            <!--//dropdown-->
+                                            <li class=" nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
+                                            <li class=" nav-item dropdown">
+                                                <a class="nav-link" data-toggle="dropdown" aria-haspopup="true"
+                                                   aria-expanded="false" href="#">News</a>
+                                                <!--                            <div class="dropdown-menu dropdown-menu-right">-->
+                                                <!--                                <a class="dropdown-item" href="/news.html">Highlights</a>-->
+                                                <!--                                <a class="dropdown-item" href="/press_coverage.html">Press coverage</a>-->
+                                                <!--                            </div>-->
+                                            </li>
+                                            <li class="nav-item"><a class="nav-link" target="_blank" href="#">Blog</a>
+                                            </li>
+                                            <li class="nav-item nav-item-cta last"><a class="btn btn-cta btn-cta-secondary" target="_blank"
+                                                                                      href="#">Try Now<sup>* </sup></a></li>
+                                        </ul><!--//nav-->
+                                    </div><!--//navabr-collapse-->
+                                </nav><!--//main-nav-->
+                            </div><!--//container-->
+                        </header><!--//header-->
+
+                        <div class="headline-bg qxr-headline-bg">
+                            <div class="container col-md-6 headertext">
+                                <h2 class="title">Contact Us</h2>
+                            </div><!--//container-->
+                        </div>
+
+                        <div class="team-img">
+                            <div class="container">
+                                <h3 class="contact-main-wrapper-title">Contact Us</h3>
+                                <img src="./images/team-main.jpg" alt="">
+                            </div>
+                        </div>
+
+                        <section class="contact-main">
+                            <div class="container">
+                                <div class="contact-main-wrapper">
+                                    <div class="contact-main-wrapper-grid">
+                                        <ul class="contact-main-list">
+                                            <li class="contact-main-list-title">
+                                                Feel free to contact us at any time
+                                            </li>
+                                            <li class="list-inline-item"><i class="fa fa-map-marker"></i>Gustav Mahlerplein
+                                                2,
+                                                Amsterdam, Netherlands
+                                            </li>
+                                            <li class="list-inline-item"><a href="tel:+31207997300"><i class="fa fa-phone"
+                                                                                                       aria-hidden="true"></i>+31
+                                                20 799 7300</a></li>
+                                            <li class="list-inline-item"><a href="mailto:support@diagnostix.ai"><i
+                                                    class="fa fa-envelope-o"></i>
+                                                support@diagnostix.ai</a></li>
+                                        </ul>
+                    <form class="contact-main-form" action="" method="post">
                         <ul>
                             <li>
-                                <input type="text" id="name" name="name" placeholder="Full your name" required>
+                                <input type="text" id="name" name="user_name" placeholder="Full your name" required>
                             </li>
+
                             <li>
-                                <input type="email" id="mail" name="email" placeholder="E-mail" required>
+                                <input type="email" id="mail" name="user_mail" placeholder="E-mail" required>
                             </li>
+
                             <li>
-                                <input type="tel" id="tel" name="phone" placeholder="Phone">
+                                <input type="tel" id="tel" name="user_phone" placeholder="Phone">
                             </li>
+
                             <li>
-                                <input type="text" id="sub" name="subject" placeholder="Subject" required>
+                                <input type="text" id="sub" name="user_subject" placeholder="Subject" required>
                             </li>
+
                             <li>
-                                <textarea id="msg" name="message" placeholder="Message"></textarea>
+                                <textarea id="msg" name="user_message" placeholder="Message"></textarea>
                             </li>
+
                             <li>
                                 <button type="submit" class="contact-main-form-btn">send message</button>
                             </li>
@@ -519,11 +575,11 @@
                     <div class="footer-col connect col-sm-6 col-12">
                         <div class="footer-col-inner">
                             <ul class="social list-inline">
-                                <li class="list-inline-item"><a href="contact.html" target="_blank"><i
+                                <li class="list-inline-item"><a href="contact.php" target="_blank"><i
                                         class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a href="contact.html"><i class="fa fa-linkedin"></i></a>
+                                <li class="list-inline-item"><a href="contact.php"><i class="fa fa-linkedin"></i></a>
                                 </li>
-                                <li class="list-inline-item"><a href="contact.html"><i class="fa fa-youtube"></i></a>
+                                <li class="list-inline-item"><a href="contact.php"><i class="fa fa-youtube"></i></a>
                                 </li>
                             </ul>
                             <div class="form-container">
